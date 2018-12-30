@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
-
+import { ContainerActivities } from './activitiesSC'
 class Activities extends Component {
     render() {
         return (
-            <div>
+            <ContainerActivities>
                 Activities
-            </div>
+            </ContainerActivities>
         );
     }
 }

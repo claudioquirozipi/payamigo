@@ -5,7 +5,7 @@ import styled from 'styled-components'
 export const ButtonSC= styled.button`
     background: ${props => props.background};
     padding: 20px 75px;
-    border-radius: 50px;    
+    border-radius: 5px;    
     position: relative;
     overflow: hidden;
     border: none;

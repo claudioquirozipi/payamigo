@@ -4,8 +4,6 @@ import Activities from './components/activities';
 import FormActivities from './components/formActivities';
 import Footer from './components/footer';
 
-import Button from './resources/button'
-
 class App extends Component {
   render() {
     return (

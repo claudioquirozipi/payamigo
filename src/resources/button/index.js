@@ -19,10 +19,11 @@ class Button extends Component {
  
 
   handlebutton(e){
-    console.log(e.clientX, e.clientY, e.target.offsetTop, e.target.offsetLeft)
+    e.preventDefault()
+    // this.props.eventClick()
     let positionX = - e.target.offsetLeft + e.clientX;
     let positionY = - e.target.offsetTop + e.clientY;
-    console.log(positionX, positionY)
+
     this.setState({
       posX: positionX + "px", posY: positionY + "px",
       width: "100vw", height: "100vw", opacity: 0, 

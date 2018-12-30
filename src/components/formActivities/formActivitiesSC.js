@@ -20,3 +20,13 @@ export const ButtonSC = styled.button`
     border: none;
     border-radius: 4px;
 `
+export const Input = styled.input`
+    background: ${colors.White};
+    margin: 10px 0 40px;
+    padding: 5px;
+    border-radius: 5px;
+    color: ${colors.Green}
+`
+export const Label = styled.label`
+    color: ${colors.White}
+`
