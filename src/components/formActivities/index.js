@@ -1,33 +1,35 @@
 import React, { Component } from 'react';
 
-import { ContainerFromActivities, Input, Label } from './formActivitiesSC';
-import { colors } from '../../resources/colorPalette';
-import Button from '../../resources/button';
+import { ContainerFromActivities, Input, Label, Button } from './formActivitiesSC';
+
 
 class FormActivities extends Component {
     constructor(props){
         super(props)
-        this.handleSend = this.handleSend.bind(this);
+               
+        this.ActivitiRef = React.createRef();
+        this.DateRef = React.createRef();
+        this.handleButton = this.handleButton.bind(this)
     }
-    handleSend(e){
-        console.log(e)
-        console.log("hola")
+    handleButton(e){
+        e.preventDefault()
+        const varActiviti = {
+            activitiName: this.ActivitiRef.current.value,
+            activitiDate: this.DateRef.current.value
+        }
         
+        this.props.handleSend(varActiviti)
     }
     render() {
         return (
-            <ContainerFromActivities>
+            <ContainerFromActivities onSubmit={this.handleButton}>
                 <Label htmlFor="Activiti">Actividad</Label>
-                <Input type="text" id="Activiti" />
+                <Input type="text" id="Activiti" ref={this.ActivitiRef} />
                 <Label htmlFor="Date">Fecha de la Actividad</Label>
-                <Input type="Date" id="Activiti" />
-                <Button 
-                    background={colors.Yellow} 
-                    color={colors.White}
-                    value="Enviar"
-                    onClick={this.handleSend}
-
-                />
+                <Input type="Date" id="Activiti" ref={this.DateRef}/>
+                <Button >
+                    Enviar
+                </Button>
             </ContainerFromActivities>
         );
     }
